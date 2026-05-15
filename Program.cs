@@ -25,4 +25,13 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 var PORT = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Run($"https://0.0.0.0:{PORT}");
+
+if (app.Environment.IsDevelopment()) {
+    app.Run();
+} else {
+    app.Run($"https://0.0.0.0:{PORT}");
+}
+
+
+
+

@@ -15,7 +15,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var home_vm = new HomeViewModel()
+
+        const data_request = Json.SerializeObject()
+
+        using (var api = helpers.ApiHelper() )
+        {
+            const response = api.Get(request, ),
+        }
+
+        return View(home_vm);
     }
 
     public IActionResult Privacy()
